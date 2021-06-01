@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'config.php';
+    require_once "config.php";
          if(isset($_POST['submit']) && $_POST["username"] != '' && $_POST["password"] != '')
          {
             //thực hiện xử lý khi người dùng ấn submit và điền đầy đủ thông tin

@@ -4,7 +4,7 @@
     // if(!isset($_SESSION['user'])){
     //     header("location:web/login.php");}
     $sql_pro = "SELECT * from tbl_sanpham  order by id_sanpham DESC";
-    $query_pro = pg_query($conn, $sql_pro);
+    $query_pro = pg_query($dbconn, $sql_pro);
 ?>
 <!DOCTYPE html>
 <html lang="en">

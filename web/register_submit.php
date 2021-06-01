@@ -14,7 +14,7 @@
             header("location: register.php");
             die();
         }
-        $sql = "SELECT * FROM user Where username = '$username'";
+        $sql = "SELECT * FROM public.user Where username = '$username'";
         $result = pg_query($dbconn, $sql);
         $password =md5($password);
         if (mysqli_num_rows($result) >0 ){
@@ -22,7 +22,7 @@
             header("location:register.php");
             die();
         }
-        $sql = "INSERT INTO user (username, password) VALUES ('$username','$password')";
+        $sql = "INSERT INTO public.user (username, password) VALUES ('$username','$password')";
         $row=pg_query($conn,$sql);
         $_SESSION["thongbao"] = "Register successful";
         header("location:login.php");

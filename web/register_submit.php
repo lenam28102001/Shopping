@@ -1,6 +1,7 @@
 <?php
     session_start();
-    include ("config.php");
+    require_once "config.php";
+    $dbconn = pg_connect($conn_string);
 // kiem tra nguoi dung co nhap du thong tin hay nhan submit chua 
     if(isset($_POST['submit']) && $_POST["username"] != '' && $_POST["password"] != '' && $_POST["repassword"] != '')
     {
@@ -14,7 +15,7 @@
             die();
         }
         $sql = "SELECT * FROM user Where username = '$username'";
-        $result = mysqli_query($conn, $sql);
+        $result = pg_query($dbconn, $sql);
         $password =md5($password);
         if (mysqli_num_rows($result) >0 ){
             $_SESSION["thongbao"] = "Username already exists!";
@@ -22,7 +23,7 @@
             die();
         }
         $sql = "INSERT INTO user (username, password) VALUES ('$username','$password')";
-        $row=mysqli_query($conn,$sql);
+        $row=pg_query($conn,$sql);
         $_SESSION["thongbao"] = "Register successful";
         header("location:login.php");
     }

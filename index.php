@@ -77,6 +77,7 @@
                     <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
                 </ul>
                 <p class="copyright">Company Name © 2021</p>
+        </div>
 </body>
 <style>
  figure {

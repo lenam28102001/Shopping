@@ -8,10 +8,10 @@
             $password = $_POST["password"];
             $password = md5($password);
             $sql = "select * from user where username='$username' and password = '$password' limit 1";
-            $user= mysqli_query($conn,$sql);
+            $user= pg_query($conn,$sql);
             if(mysqli_num_rows($user) >0 )
             {  
-               $row_data= mysqli_fetch_array($user);
+               $row_data= pg_fetch_array($user);
                $_SESSION['user']= $username;
                $_SESSION['id_khachhang']= $row_data['id_user'];
                header("location:../index.php");

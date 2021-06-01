@@ -1,10 +1,10 @@
 <?php
     session_start();
     include('web/config.php');
-    if(!isset($_SESSION['user'])){
-        header("location:web/login.php");}
+    // if(!isset($_SESSION['user'])){
+    //     header("location:web/login.php");}
     $sql_pro = "SELECT * from tbl_sanpham  order by id_sanpham DESC";
-    $query_pro = mysqli_query($conn, $sql_pro);
+    $query_pro = pg_query($conn, $sql_pro);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +50,7 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
      <section>
     <?php
-        while($row_pro = mysqli_fetch_array($query_pro)){
+        while($row_pro = pg_fetch_array($query_pro)){
     ?>
     <article>
          <a href="web/products.php?action=sanpham&id=<?php echo $row_pro['id_sanpham']?>">

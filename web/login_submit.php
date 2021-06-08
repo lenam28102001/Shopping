@@ -20,14 +20,14 @@
             else
             {
                $_SESSION["thongbao"] = "Wrong username or password!";
-               header("location: login.php");
+               header("location: ./login.php");
             }
          } 
          else
          {
             $_SESSION["thongbao"]="Please enter your complete information!";
-            header("location:login.php");
+            header("location:./login.php");
          }
          if(isset($_POST["reset"]))
-         header("location: register.php");
+         header("location: ./register.php");
       ?>

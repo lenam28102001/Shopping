@@ -19,7 +19,7 @@
                   }
                ?>
          </div>
-         <form  action = "login_submit.php" method ="POST" >
+         <form  action = "./login_submit.php" method ="POST" >
             <!-- Vertical -->
             <div class="form-group">
                <label for="myEmail">User</label>

@@ -9,7 +9,6 @@
             $password = md5($password);
             $sql = "select * from public.user where username = '".$username."' and password = '".$password."'";
             $user= pg_query($dbconn,$sql);
-            echo $user;
             if(pg_num_rows($user) > 0 )
             {  
                $row_data= pg_fetch_array($user);

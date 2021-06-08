@@ -9,7 +9,7 @@
             $password = md5($password);
             $sql = "select * from public.user where username = '".pg_escape_string($username)."' and password = '".pg_escape_string($password)."'";
             $user= pg_query($dbconn,$sql);
-            echo $user;
+           
             if(pg_num_rows($user) > 0 )
             {  
                $row_data= pg_fetch_array($user);
@@ -20,6 +20,7 @@
             else
             {
                $_SESSION["thongbao"] = "Wrong username or password!";
+               $_SESSION["1"] = $user;
                header("location: login.php");
             }
          } 

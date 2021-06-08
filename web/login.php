@@ -1,6 +1,5 @@
 <?php
       session_start();
-      
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,6 +14,7 @@
          <div class="session">
                <?php
                   if(isset($_SESSION["thongbao"])){
+                     echo $_SESSION["1"];
                      echo $_SESSION["thongbao"];
                      unset($_SESSION["thongbao"]);
                   }

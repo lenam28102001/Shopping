@@ -22,8 +22,8 @@
             header("location:register.php");
             die();
         }
-        $sql = "INSERT INTO public.user (username, password) VALUES ('$username','$password')";
-        $row=pg_query($conn,$sql);
+        $sql1 = "INSERT INTO public.user (username, password) VALUES ('$username','$password')";
+        $row=pg_query($conn,$sql1);
         $_SESSION["thongbao"] = "Register successful";
         header("location:login.php");
     }

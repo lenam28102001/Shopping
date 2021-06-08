@@ -13,8 +13,8 @@
          <h2>Login</h2>
          <div class="session">
                <?php
+                  echo $_SESSION["test"];
                   if(isset($_SESSION["thongbao"])){
-                     echo $_SESSION["1"];
                      echo $_SESSION["thongbao"];
                      unset($_SESSION["thongbao"]);
                   }

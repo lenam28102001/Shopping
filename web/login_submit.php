@@ -7,7 +7,7 @@
             $username = $_POST["username"];
             $password = $_POST["password"];
             $password = md5($password);
-            $sql = "select * from public.user where username = '".pg_escape_string($username)."' and password = '".$password."'";
+            $sql = "select * from public.user where username = '".pg_escape_string($username)."' and password = '".pg_escape_string($password)."'";
             $user= pg_query($dbconn,$sql);
             if(pg_num_rows($user) > 0 )
             {  

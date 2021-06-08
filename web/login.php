@@ -49,7 +49,7 @@
                   }
                ?>
          </div>
-         <form  action="" method ="POST" >
+         <form  method ="POST" >
             <!-- Vertical -->
             <div class="form-group">
                <label for="myEmail">User</label>

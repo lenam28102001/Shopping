@@ -7,20 +7,21 @@
             $username = $_POST["username"];
             $password = $_POST["password"];
             $password = md5($password);
-            $sql = "select * from public.user where public.username ='$username' and public.password = '$password' limit 1";
+            $sql = "select * from public.user where username ='$username' and password = '$password' limit 1";
             $user= pg_query($dbconn,$sql);
-            if(pg_num_rows($user) > 0 )
-            {  
-               $row_data= pg_fetch_array($user);
-               $_SESSION['user']= $username;
-               $_SESSION['id_khachhang']= $row_data['id_user'];
-               header("location:../index.php");
-            }
-            else
-            {
-               $_SESSION["thongbao"] = "Wrong username or password!";
-               header("location: ./login.php");
-            }
+            echo $sql;
+            // if(pg_num_rows($user) > 0 )
+            // {  
+            //    $row_data= pg_fetch_array($user);
+            //    $_SESSION['user']= $username;
+            //    $_SESSION['id_khachhang']= $row_data['id_user'];
+            //    header("location:../index.php");
+            // }
+            // else
+            // {
+            //    $_SESSION["thongbao"] = "Wrong username or password!";
+            //    header("location: ./login.php");
+            // }
          } 
          else
          {

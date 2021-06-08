@@ -14,7 +14,7 @@
          <div class="session">
                <?php
                echo $_SESSION['password'];
-               echo $_SESSION['username']
+               echo $_SESSION['username'];
                   echo $_SESSION["test"];
                   if(isset($_SESSION["thongbao"])){
                      echo $_SESSION["thongbao"];
